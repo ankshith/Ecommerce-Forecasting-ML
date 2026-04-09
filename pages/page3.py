@@ -49,36 +49,28 @@ st.pyplot(fig)
 
 
 # Load model
-if user_input_1 == 1004856:
-    model = load_model("models\(1)Dense_model_1004856.h5",compile=False)
+from tensorflow.keras.models import load_model
+
+model_map = {
+    1004856: "models/(1)Dense_model_1004856.h5",
+    1004767: "models/(2)Dense_model_1004767.h5",
+    1004833: "models/(3)Dense_model_1004833.h5",
+    1004870: "models/(4)Dense_model_1004870.h5",
+    10048386: "models/(5)Dense_model_10048386.h5",
+    1005100: "models/(6)Dense_model_1005100.h5",
+    1004873: "models/(7)Dense_model_1004873.h5",
+    1004750: "models/(8)Dense_model_1004750.h5",
+    1004858: "models/(9)Dense_model_1004858.h5",
+    1004209: "models/(10)Dense_model_1004209.h5",
+}
+
+model_path = model_map.get(user_input_1)
+
+if model_path:
+    model = load_model(model_path, compile=False)
     model.compile()
-if user_input_1 == 1004767:
-    model = load_model("models\(2)Dense_model_1004767.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004833:
-    model = load_model("models\(3)Dense_model_1004833.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004870:
-    model = load_model("models\(4)Dense_model_1004870.h5",compile=False)
-    model.compile()
-if user_input_1 == 10048386:
-    model = load_model("models\(5)Dense_model_10048386.h5",compile=False)
-    model.compile()
-if user_input_1 == 1005100:
-    model = load_model("models\(6)Dense_model_1005100.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004873:
-    model = load_model("models\(7)Dense_model_1004873.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004750:
-    model = load_model("models\(8)Dense_model_1004750.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004858:
-    model = load_model("models\(9)Dense_model_1004858.h5",compile=False)
-    model.compile()
-if user_input_1 == 1004209:
-    model = load_model("models\(10)Dense_model_1004209.h5",compile=False)
-    model.compile()
+else:
+    raise ValueError("Invalid model ID")
 
 
 
