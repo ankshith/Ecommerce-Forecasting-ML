@@ -17,7 +17,7 @@ import models
 
 
 # Load the OpenAI API key
-openai.api_key = "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"
+openai.api_key = ".."
 
 # Load the Spacy model
 nlp = spacy.load("en_core_web_sm")
